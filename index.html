@@ -1,0 +1,39 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="text/tailwindcss" href="style.css">
+    <title>Task List</title>
+
+</head>
+
+<body>
+    <section class="bg-yellow-100">
+        <div class="container m-auto px-5">
+            <div class="py-10 ">
+                <h2 class="block text-center text-4xl font-bold text-green-950 uppercase">Task List</h2>
+                <div class="w-3/5 m-auto bg-yellow-300 py-6 px-6 mt-10 rounded-md">
+                    <div class="flex gap-5">
+                        <input class="basis-4/5 w-full h-8 px-4" type="text" placeholder="Enter Your Task"
+                            id="get-task">
+                        <input onclick="addTask()"
+                            class="basis-1/5 w-full h-8 inline-block bg-lime-950 text-gray-100 text-base font-normal cursor-pointer"
+                            type="submit" placeholder="Add Task" value="Add Task" id="submit">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="bg-lime-100 py-12">
+        <div class="container m-auto px-6" id="task-list-container">
+
+        </div>
+    </section>
+    <script src="custom.js"></script>
+</body>
+
+</html>
