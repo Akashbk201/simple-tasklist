@@ -18,6 +18,7 @@ function addTask() {
     // Creating a input
     var taskName = document.createElement("input");
     taskName.classList.add("basis-3/5", "w-full", "h-10", "px-4");
+    taskName.setAttribute("readonly", "readonly");
     taskName.value = getTask.value;
 
     // puting input inside that new div
@@ -66,6 +67,20 @@ function addTask() {
     // Delete Button Function
     taskDel.addEventListener("click", (event) => {
       event.target.parentElement.remove();
+    });
+
+    // Edit Button Function
+    taskEdit.addEventListener("click", (e) => {
+      if (e.target.innerText === "Edit") {
+        taskEdit.innerText = "Update";
+        taskName.removeAttribute("readonly");
+        taskName.focus();
+        taskName.style.backgroundColor = "#ffe600";
+      } else {
+        taskEdit.innerText = "Edit";
+        taskName.setAttribute("readonly", "readonly");
+        taskName.style.backgroundColor = "#fff";
+      }
     });
   } else {
     alert("Please Enter a Task!");
